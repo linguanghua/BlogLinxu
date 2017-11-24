@@ -1,0 +1,36 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="BlogLinxu_main:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/BlogLinxu_main_war_exploded</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="BlogLinxu_main" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Gradle: org.springframework:spring-core:4.3.9.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-beans:4.3.9.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-web:4.3.9.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-webmvc:4.3.9.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-tx:4.3.9.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-jdbc:4.3.9.RELEASE" />
+          <element id="library" level="project" name="Gradle: commons-logging:commons-logging:1.2" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-aop:4.3.9.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-context:4.3.9.RELEASE" />
+          <element id="library" level="project" name="Gradle: org.springframework:spring-expression:4.3.9.RELEASE" />
+          <element id="library" level="project" name="Gradle: commons-dbcp:commons-dbcp:1.4" />
+          <element id="library" level="project" name="Gradle: mysql:mysql-connector-java:5.1.38" />
+          <element id="library" level="project" name="Gradle: org.mybatis:mybatis-spring:1.2.3" />
+          <element id="library" level="project" name="Gradle: org.mybatis:mybatis:3.3.0" />
+          <element id="library" level="project" name="Gradle: commons-pool:commons-pool:1.5.4" />
+          <element id="library" level="project" name="Gradle: log4j:log4j:1.2.17" />
+        </element>
+        <element id="file-copy" path="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
+        <element id="directory" name="views">
+          <element id="dir-copy" path="$PROJECT_DIR$/src/main/webapp/WEB-INF/views" />
+        </element>
+        <element id="file-copy" path="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/article.jsp" />
+      </element>
+      <element id="javaee-facet-resources" facet="BlogLinxu_main/web/Web Gradle : Blog.war" />
+    </root>
+  </artifact>
+</component>
