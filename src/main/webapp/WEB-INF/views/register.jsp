@@ -25,8 +25,12 @@
             $('.ui.accordion').accordion({duration: 'click'});
 
             $('.ui.dropdown').dropdown();
+
+            $("#calendarYear").html(gYear);
+            $("#calendarMonth").html(gMonth+1);
             makeCalendar();
             addDateItem();
+            countDay(gYear,gMonth);
         });
 
         function makeCalendar() {//week表示所选月份第一天星期几，countDay表示所选月份有几天
@@ -48,12 +52,16 @@
                 j++;
             }
             $btn = $("<button>");
-            $btn.addClass("mini ui icon green basic button");
+            $btn.addClass("mini ui icon basic button dayBtn");
             $btn.mouseover(function () {
-                $(this).removeClass("basic");
+                if(!$(this).hasClass("active")) {
+                    $(this).removeClass("basic");
+                }
             });
             $btn.mouseout(function () {
-                $(this).addClass("basic");
+                if(!$(this).hasClass("active")) {
+                    $(this).addClass("basic");
+                }
             });
             $btn.click(function () {
                 var year = $("#calendarYear").html();
@@ -62,21 +70,11 @@
                 $("#birthday").html(year + "-" + month + "-" + day);
             });
             $("#divCalendar .two.wide.column").append($btn);
-//            var count = $("#divCalendar .mini.ui.icon.green.basic.button").length;
-//            var str;
-//            for (var i = 0; i < count; i++) {
-//                if (i < 9) {
-//                    str = "0" + (i + 1);
-//                } else {
-//                    str = i + 1;
-//                }
-//                $($("#divCalendar .mini.ui.icon.green.basic.button")[i]).html(str);
-//            }
-            countDay();
+
         }
 
         function setCalendarDay(week,month) {//week表示所选月份第一天星期几，countDay表示所选月份有几天
-            var count = $("#divCalendar .mini.ui.icon.green.basic.button").length;
+            var count = $(".dayBtn").length;
             var str;
             var index=0;
             var lastMonth=0;
@@ -85,38 +83,57 @@
                 lastMonth = 11;
             } else if(month==11){
                 nextMonth = 0;
+            }else {
+                lastMonth = month-1;
+                nextMonth = month+1;
             }
-
+            alert(week+" "+ month);
                 if (week > 0) {
-                    for (var i = days[lastMonth] - week; i < days[lastMonth]; i++) {
+                    for (var i = days[lastMonth] - week+1; i < days[lastMonth]; i++) {
                         if (i < 9) {
                             str = "0" + (i + 1);
                         } else {
                             str = i + 1;
                         }
-                        $($("#divCalendar .mini.ui.icon.green.basic.button")[index]).html(str);
+                        $($(".dayBtn")[index]).html(str);
                         index++;
                     }
-                    week==0;
                 }
+                if(week==0){
+                    for (var i = days[lastMonth] - 6+1; i < days[lastMonth]; i++) {
+                        if (i < 9) {
+                            str = "0" + (i + 1);
+                        } else {
+                            str = i + 1;
+                        }
+                        $($(".dayBtn")[index]).html(str);
+                        index++;
+                    }
+                }
+                alert(days[month]);
+                for (var i = 0; i < days[month]; i++) {
 
-                for (var i = 1; i < days[month]; i++) {
                     if (i < 9) {
                         str = "0" + (i + 1);
                     } else {
                         str = i + 1;
                     }
-                    $($("#divCalendar .mini.ui.icon.green.basic.button")[index]).html(str);
+                    $($(".dayBtn")[index]).html(str);
+                    $($(".dayBtn")[index]).addClass("green");
+                    if(i==gDay-1){
+                        $($(".dayBtn")[index]).removeClass("basic");
+                        $($(".dayBtn")[index]).addClass("active");
+                    }
                     index++;
                 }
 
-                for (var i = 1; i < days[nextMonth]&&index<count; i++) {
+                for (var i = 0; i < days[nextMonth]&&index<count; i++) {
                     if (i < 9) {
                         str = "0" + (i + 1);
                     } else {
                         str = i + 1;
                     }
-                    $($("#divCalendar .mini.ui.icon.green.basic.button")[index]).html(str);
+                    $($(".dayBtn")[index]).html(str);
                     index++;
                 }
         }
@@ -127,17 +144,31 @@
                 $itemDiv = $("<div>");
                 $itemDiv.addClass("item");
                 $itemDiv.html(i + 1);
+                $itemDiv.click(function () {
+                    var year = $("#calendarYear").html();
+
+                    countDay(year,($(this).html()-1));
+                });
                 $("#monthData").append($itemDiv);
             }
             for (var i = 1900; i < 2017; i++) {
                 $itemDiv = $("<div>");
                 $itemDiv.addClass("item");
                 $itemDiv.html(i + 1);
+                $itemDiv.click(function () {
+                    var month = $("#calendarMonth").html();
+                    countDay($(this).html(),month);
+                });
                 $("#yearData").append($itemDiv);
             }
         }
         var days = [31, 28, 31, 30, 31, 30, 31, 30, 31, 31, 30, 31];
-        function countDay() {
+        var myDate = new Date();
+        var gYear = myDate.getFullYear();
+        var gMonth = myDate.getMonth();
+        var gDay = myDate.getDate();        //获取当前日(1-31)
+
+        function countDay(year,month) {
             var dayNums = [[3, 6, 6, 2, 4, 0, 2, 5, 1, 3, 6, 1],
                 [4, 0, 1, 4, 6, 2, 4, 0, 3, 5, 1, 3],
                 [6, 2, 2, 5, 0, 3, 5, 1, 4, 6, 2, 4],
@@ -167,13 +198,10 @@
                 [1, 4, 4, 0, 2, 5, 0, 3, 6, 1, 4, 6],
                 [2, 5, 5, 1, 3, 6, 1, 4, 0, 2, 5, 0]];
 
-            var year = 2017;
             if (year % 100 == 0 && year % 4 == 0) {
                 days[1] = 29;
             }
-            var month = 10;
-            var day = 24;
-            var week = (dayNums[((year-2015)%28)]+day)%7;
+            var week = (dayNums[((gYear-2015)%28)][month]+1)%7;
             setCalendarDay(week,month);
         }
 
@@ -305,13 +333,13 @@
 
 
             <div class="row calendarRow" style="margin-left: 2rem">
-                <div class="two wide column">日</div>
                 <div class="two wide column">一</div>
                 <div class="two wide column">二</div>
                 <div class="two wide column">三</div>
                 <div class="two wide column">四</div>
                 <div class="two wide column">五</div>
                 <div class="two wide column">六</div>
+                <div class="two wide column">日</div>
             </div>
         </div>
         <div class="ui grid" id="divCalendar"></div>
