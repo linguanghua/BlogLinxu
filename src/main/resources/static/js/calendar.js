@@ -175,6 +175,7 @@ function setDayBtnClickListener(count) {
                 month="0"+month;
             }
             $("#birthday").html(year + "-" + month + "-" + day);
+            $("#calendarLayout").hide();
         });
     }
 }

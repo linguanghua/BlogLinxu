@@ -94,13 +94,15 @@
         }
     </style>
     <script type="application/javascript" src="/static/jquery.min.js"></script>
+    <script type="application/javascript" src="/static/semantic.js"></script>
+    <script type="application/javascript" src="/static/semantic.min.js"></script>
     <script src="/static/components/visibility.js"></script>
     <script src="/static/components/sidebar.js"></script>
     <script src="/static/components/transition.js"></script>
     <script>
         $(document)
             .ready(function() {
-
+                $('.ui.accordion').accordion();
                 // fix menu when passed
                 $('.ui.network.menu')
                     .visibility({
@@ -170,12 +172,51 @@
             <div class="ui container segment" style="margin-top: 50px" style=" background-color: #FFFFFF;">
 
                 <div class="ui grid container">
-                    <div class="three wide column">
+                    <div class="three wide column left aligned" style="margin-top: 40px">
                         <h3>文章列表</h3>
-                        <div class="ui list">
-                            <a class="item">文章1</a>
-                            <a class="item">文章2</a>
-                            <a class="item">文章3</a>
+                        <div class="ui styled fluid accordion">
+                            <div class="title"><i class="dropdown icon"></i>Android </div>
+                            <div class="content" >
+                                <div class="ui animated list" style="margin-left: 1.5rem">
+                                    <div class="item">
+                                        <div class="item">Activity</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="item">Service</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="item">Content Provider</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="title"><i class="dropdown icon"></i> Spring </div>
+                            <div class="content">
+                                <div class="ui animated list" style="margin-left: 1.5rem">
+                                    <div class="item">
+                                        <div class="item">SpringMVC</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="item">Spring Android</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="item">Spring Framwork</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="title"><i class="dropdown icon"></i>Mybatis </div>
+                            <div class="content">
+                                <div class="ui animated list" style="margin-left: 1.5rem">
+                                    <div class="item">
+                                        <div class="item">Mybatis2</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="item">Mybatis3</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="item">ibatis</div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 <div class="thirteen wide column" style="margin-top: 3rem;">

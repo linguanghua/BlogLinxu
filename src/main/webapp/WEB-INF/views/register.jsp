@@ -108,7 +108,7 @@
     <br/>
 </div>
 
-<div class="ui centered card" style="width: 320px;position: relative;margin-top: -280px;" id="calendarLayout">
+<div class="ui centered card" style="width: 320px;position: relative;margin-top: -14.5rem;" id="calendarLayout">
     <div class="content" style="width: 320px;">
         <div class="ui grid">
             <div class="row" style="background-color: #0d71bb;padding: 0px">
@@ -166,9 +166,7 @@
                 <div class="one wide column">&nbsp;</div>
             </div>
         </div>
-        <div class="ui grid" id="testDiv">
-
-        </div>
+        <div class="ui grid" id="testDiv"></div>
     </div>
 </div>
 </body>
