@@ -126,9 +126,9 @@
 <div class="ui large secondary top fixed hidden menu" style="background: url('/static/imgs/bg1.jpg');padding: 2rem;">
     <div class="ui container">
         <a class="item spacing"  style="color:#FFFFFF;">主页</a>
-        <a class="active item spacing" style="color:#FFFFFF;" href="article.jsp">文章</a>
-        <a class="item spacing" style="color:#FFFFFF;">问题</a>
-        <a class="item spacing" style="color:#FFFFFF;">历程</a>
+        <a class="active item spacing" style="color:#FFFFFF;" href="#">文章</a>
+        <a class="item spacing" style="color:#FFFFFF;">项目</a>
+        <a class="item spacing" style="color:#FFFFFF;">资源</a>
         <div class="right menu">
             <div class="item">
                 <a class="ui green button spacing">登录</a>
@@ -143,9 +143,9 @@
 <!-- Sidebar Menu -->
 <div class="ui vertical inverted sidebar menu">
     <a class="item spacing">主页</a>
-    <a class="active item spacing" href="article.jsp">文章</a>
-    <a class="item spacing">问题</a>
-    <a class="item spacing">历程</a>
+    <a class="active item spacing" href="#">文章</a>
+    <a class="item spacing">项目</a>
+    <a class="item spacing">资源</a>
     <a class="item spacing">登录</a>
     <a class="item spacing">注册</a>
 </div>
@@ -160,8 +160,8 @@
                 </a>
                 <a class="item spacing" href="../">主页</a>
                 <a class="active item spacing" href="#">文章</a>
-                <a class="item spacing">问题</a>
-                <a class="item spacing">历程</a>
+                <a class="item spacing">项目</a>
+                <a class="item spacing">资源</a>
                 <div class="right item">
                     <a class="ui inverted button spacing">登录</a>
                     <a class="ui inverted button spacing">注册</a>
