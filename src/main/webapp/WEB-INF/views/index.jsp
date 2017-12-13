@@ -146,10 +146,10 @@
         <a class="item spacing" style="color:#FFFFFF;">资源</a>
         <div class="right menu">
             <div class="item">
-                <a class="ui green button spacing">登录</a>
+                <a class="ui green button spacing" href="/login.html">登录</a>
             </div>
             <div class="item">
-                <a class="ui green button spacing">注册</a>
+                <a class="ui green button spacing" href="/register.html">注册</a>
             </div>
         </div>
     </div>
@@ -161,8 +161,8 @@
     <a class="item spacing" href="/articles/article">文章</a>
     <a class="item spacing">项目</a>
     <a class="item spacing">资源</a>
-    <a class="item spacing">登录</a>
-    <a class="item spacing">注册</a>
+    <a class="item spacing" href="/login.html">登录</a>
+    <a class="item spacing" href="/register.html">注册</a>
 </div>
 <!-- Page Contents -->
 <div class="pusher">
@@ -178,8 +178,8 @@
                 <a class="item spacing">项目</a>
                 <a class="item spacing">资源</a>
                 <div class="right item">
-                    <a class="ui inverted button spacing">登录</a>
-                    <a class="ui inverted button spacing">注册</a>
+                    <a class="ui inverted button spacing" href="/login.html">登录</a>
+                    <a class="ui inverted button spacing" href="/register.html">注册</a>
                 </div>
             </div>
         </div>

@@ -33,6 +33,11 @@
         <property name="mapperInterface" value="com.junxu.mapper.UserMapper" />
     </bean>
 
+    <bean id="articleMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="sqlSessionFactory" ref="sqlSessionFactory" />
+        <property name="mapperInterface" value="com.junxu.mapper.ArticleMapper" />
+    </bean>
+
 
 
     <!-- 解决静态资源访问 -->

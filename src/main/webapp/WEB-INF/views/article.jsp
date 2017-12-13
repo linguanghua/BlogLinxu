@@ -5,7 +5,8 @@
   Time: 10:40
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java"  %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>博客</title>
@@ -220,30 +221,37 @@
                         </div>
                     </div>
                 <div class="thirteen wide column" style="margin-top: 3rem;">
-                    <div class="ui left aligned container segment">
-                        <h2 class="ui header">Dogs Roles with Humans</h2>
-                        <p>Domestic dogs inherited complex behaviors, such as bite inhibition, from their wolf ancestors, which would have been pack hunters with complex body language. These sophisticated forms of social cognition and communication may account for their trainability, playfulness, and ability to fit into human households and social situations, and these attributes have given dogs a relationship with humans that has enabled them to become one of the most successful species on the planet today.</p>
-                    </div>
-                    <div class="ui left aligned container segment" style="margin-top: 50px">
-                        <h2 class="ui header">Dogs Roles with Humans</h2>
-                        <p>Domestic dogs inherited complex behaviors, such as bite inhibition, from their wolf ancestors, which would have been pack hunters with complex body language. These sophisticated forms of social cognition and communication may account for their trainability, playfulness, and ability to fit into human households and social situations, and these attributes have given dogs a relationship with humans that has enabled them to become one of the most successful species on the planet today.</p>
-                    </div>
-                    <div class="ui left aligned container segment" style="margin-top: 50px">
-                        <h2 class="ui header">Dogs Roles with Humans</h2>
-                        <p>Domestic dogs inherited complex behaviors, such as bite inhibition, from their wolf ancestors, which would have been pack hunters with complex body language. These sophisticated forms of social cognition and communication may account for their trainability, playfulness, and ability to fit into human households and social situations, and these attributes have given dogs a relationship with humans that has enabled them to become one of the most successful species on the planet today.</p>
-                    </div>
-                    <div class="ui left aligned container segment" style="margin-top: 50px">
-                        <h2 class="ui header">Dogs Roles with Humans</h2>
-                        <p>Domestic dogs inherited complex behaviors, such as bite inhibition, from their wolf ancestors, which would have been pack hunters with complex body language. These sophisticated forms of social cognition and communication may account for their trainability, playfulness, and ability to fit into human households and social situations, and these attributes have given dogs a relationship with humans that has enabled them to become one of the most successful species on the planet today.</p>
-                    </div>
-                    <div class="ui left aligned container segment" style="margin-top: 50px">
-                        <h2 class="ui header">Dogs Roles with Humans</h2>
-                        <p>Domestic dogs inherited complex behaviors, such as bite inhibition, from their wolf ancestors, which would have been pack hunters with complex body language. These sophisticated forms of social cognition and communication may account for their trainability, playfulness, and ability to fit into human households and social situations, and these attributes have given dogs a relationship with humans that has enabled them to become one of the most successful species on the planet today.</p>
-                    </div>
-                    <div class="ui left aligned container segment" style="margin-top: 50px">
-                        <h2 class="ui header">Dogs Roles with Humans</h2>
-                        <p>Domestic dogs inherited complex behaviors, such as bite inhibition, from their wolf ancestors, which would have been pack hunters with complex body language. These sophisticated forms of social cognition and communication may account for their trainability, playfulness, and ability to fit into human households and social situations, and these attributes have given dogs a relationship with humans that has enabled them to become one of the most successful species on the planet today.</p>
-                    </div>
+                    <c:forEach items="${articles}" var="item">
+                        <div class="ui left aligned container segment">
+                            <h2 class="ui header"><a href="${item.link}">${item.title}</a></h2>
+                            <p>${item.introduction}</p>
+                        </div>
+                    </c:forEach>
+
+                    <%--<div class="ui left aligned container segment">--%>
+                        <%--<h2 class="ui header">Dogs Roles with Humans</h2>--%>
+                        <%--<p>Domestic dogs inherited complex behaviors, such as bite inhibition, from their wolf ancestors, which would have been pack hunters with complex body language. These sophisticated forms of social cognition and communication may account for their trainability, playfulness, and ability to fit into human households and social situations, and these attributes have given dogs a relationship with humans that has enabled them to become one of the most successful species on the planet today.</p>--%>
+                    <%--</div>--%>
+                    <%--<div class="ui left aligned container segment" style="margin-top: 50px">--%>
+                        <%--<h2 class="ui header">Dogs Roles with Humans</h2>--%>
+                        <%--<p>Domestic dogs inherited complex behaviors, such as bite inhibition, from their wolf ancestors, which would have been pack hunters with complex body language. These sophisticated forms of social cognition and communication may account for their trainability, playfulness, and ability to fit into human households and social situations, and these attributes have given dogs a relationship with humans that has enabled them to become one of the most successful species on the planet today.</p>--%>
+                    <%--</div>--%>
+                    <%--<div class="ui left aligned container segment" style="margin-top: 50px">--%>
+                        <%--<h2 class="ui header">Dogs Roles with Humans</h2>--%>
+                        <%--<p>Domestic dogs inherited complex behaviors, such as bite inhibition, from their wolf ancestors, which would have been pack hunters with complex body language. These sophisticated forms of social cognition and communication may account for their trainability, playfulness, and ability to fit into human households and social situations, and these attributes have given dogs a relationship with humans that has enabled them to become one of the most successful species on the planet today.</p>--%>
+                    <%--</div>--%>
+                    <%--<div class="ui left aligned container segment" style="margin-top: 50px">--%>
+                        <%--<h2 class="ui header">Dogs Roles with Humans</h2>--%>
+                        <%--<p>Domestic dogs inherited complex behaviors, such as bite inhibition, from their wolf ancestors, which would have been pack hunters with complex body language. These sophisticated forms of social cognition and communication may account for their trainability, playfulness, and ability to fit into human households and social situations, and these attributes have given dogs a relationship with humans that has enabled them to become one of the most successful species on the planet today.</p>--%>
+                    <%--</div>--%>
+                    <%--<div class="ui left aligned container segment" style="margin-top: 50px">--%>
+                        <%--<h2 class="ui header">Dogs Roles with Humans</h2>--%>
+                        <%--<p>Domestic dogs inherited complex behaviors, such as bite inhibition, from their wolf ancestors, which would have been pack hunters with complex body language. These sophisticated forms of social cognition and communication may account for their trainability, playfulness, and ability to fit into human households and social situations, and these attributes have given dogs a relationship with humans that has enabled them to become one of the most successful species on the planet today.</p>--%>
+                    <%--</div>--%>
+                    <%--<div class="ui left aligned container segment" style="margin-top: 50px">--%>
+                        <%--<h2 class="ui header">Dogs Roles with Humans</h2>--%>
+                        <%--<p>Domestic dogs inherited complex behaviors, such as bite inhibition, from their wolf ancestors, which would have been pack hunters with complex body language. These sophisticated forms of social cognition and communication may account for their trainability, playfulness, and ability to fit into human households and social situations, and these attributes have given dogs a relationship with humans that has enabled them to become one of the most successful species on the planet today.</p>--%>
+                    <%--</div>--%>
                     </div>
 
                 </div>
@@ -291,5 +299,6 @@
         </div>
     </div>
 </div>
+
 </body>
 </html>
