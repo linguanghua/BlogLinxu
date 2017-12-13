@@ -2,8 +2,8 @@
 <html>
 <head>
     <title>主页</title>
-    <link rel="stylesheet" type="text/css" href="static/semantic.css">
-    <link rel="stylesheet" type="text/css" href="static/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/semantic.css">
+    <link rel="stylesheet" type="text/css" href="/static/semantic.min.css">
     <style type="text/css">
 
         .hidden.menu {
@@ -109,12 +109,12 @@
             letter-spacing:0.5rem;
         }
     </style>
-    <script type="application/javascript" src="static/jquery.min.js"></script>
-    <script type="application/javascript" src="static/semantic.js"></script>
-    <script type="application/javascript" src="static/semantic.min.js"></script>
-    <script src="static/components/visibility.js"></script>
-    <script src="static/components/sidebar.js"></script>
-    <script src="static/components/transition.js"></script>
+    <script type="application/javascript" src="/static/jquery.min.js"></script>
+    <script type="application/javascript" src="/static/semantic.js"></script>
+    <script type="application/javascript" src="/static/semantic.min.js"></script>
+    <script src="/static/components/visibility.js"></script>
+    <script src="/static/components/sidebar.js"></script>
+    <script src="/static/components/transition.js"></script>
     <script>
         $(document)
             .ready(function() {

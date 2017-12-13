@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.junxu.mapper.UserMapper">
-    <select id="checkUserIsExist" resultType="com.junxu.po.User" parameterType="map">
-        SELECT * FROM user WHERE USERNAME = #{username} and PASSWORD=${password}
+    <select id="checkUserIsExist" parameterType="java.util.Map" resultType="com.junxu.po.User">
+        SELECT * FROM user WHERE user.username = #{uname} and user.password=#{psw}
     </select>
 </mapper>

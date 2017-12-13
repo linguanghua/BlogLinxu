@@ -5,28 +5,45 @@
     <title>登录</title>
     <link rel="stylesheet" type="text/css" href="/static/semantic.css">
     <link rel="stylesheet" type="text/css" href="/static/semantic.min.css">
+    <script type="application/javascript" src="/static/jquery.min.js"></script>
 </head>
 <body style="background: url('/static/imgs/bg1.jpg');padding: 2rem;">
 <div class="ui centered text container segment" style="margin-top: 8rem;">
     <img class="ui small circular image centered" src="/static/imgs/steve.jpg">
     <div class="ui centered card">
         <div class="content centered">
+            <form action="/hello/login" method="post">
             <h2 class="ui header">登录</h2>
             <div class="ui left icon input fluid">
-                <input type="text" placeholder="username">
+                <input type="text" placeholder="username" name="username" id="uname">
                 <i class="user icon"></i>
             </div>
             <br/><br/>
             <div class="ui left icon input fluid">
-                <input type="password" placeholder="password">
+                <input type="password" placeholder="password" name="password" id="psw">
                 <i class="protect  icon"></i>
             </div>
             <br/><br/>
-            <button class="fluid ui green button">登录</button>
+            <button class="fluid ui green button" id="submit" type="submit">登录</button>
+            </form>
         </div>
     </div>
     <br />
 </div>
 
+<script type="application/javascript">
+//    $(document).ready(function () {
+//        $("#submit").click(function () {
+//            var uname = $("#uname").val();
+//            var psw = $("#psw").val();
+//            $.post("/hello/login",{
+//                username:uname,
+//                password:psw
+//            },function (data,status) {
+//                alert(status);
+//            });
+//        });
+//    });
+</script>
 </body>
 </html>

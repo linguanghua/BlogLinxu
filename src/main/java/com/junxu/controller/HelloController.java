@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.lang.String;
 import java.util.HashMap;
@@ -18,20 +19,19 @@ import java.util.Map;
 public class HelloController {
     @Autowired
     UserMapper userMapper;
-    @RequestMapping(value = "/index",method = RequestMethod.GET)
-    public String printHello(User user,ModelMap modelMap){
+
+    @RequestMapping(value = "/login",method = RequestMethod.POST)
+    public String login(User user, ModelMap modelMap){
         modelMap.addAttribute("msg","Hello World!");
         Map<String,Object> map = new HashMap<>();
-        map.put("username",user.getUsername());
-        map.put("password",user.getPassword());
+        map.put("uname",user.getUsername());
+        map.put("psw",user.getPassword());
 
         User user1 = userMapper.checkUserIsExist(map);
-        System.out.println(user1.getUsername());
-        return "indexHello";
-    }
-    @RequestMapping(value = "login",method = RequestMethod.GET)
-    public String login(){
-        return "login";
+        if (user1!=null){
+            System.out.println(user1.getUsername());
+        }
+        return "index";
     }
 
     @RequestMapping(value = "register",method = RequestMethod.GET)
